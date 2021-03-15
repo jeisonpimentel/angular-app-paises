@@ -1,0 +1,49 @@
+
+<div *ngIf="!pais; else divPais"
+    class="alert alert-info">
+    <p>Por favor espere un momento...</p>
+</div>
+
+<ng-template #divPais>
+    <div>
+        <h2><strong>País:</strong> {{pais.capital}}, {{pais.name}}</h2>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Bandera</h3>
+            <img [src]="pais.flag" [alt]="pais.name" class="img-thumbnail">
+        </div>
+    
+        <div class="col">
+            <h3>Información</h3>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Población: </strong> {{ pais.population | number }}</li>
+                <li class="list-group-item"><strong>Nombre de País: </strong> {{ pais.nativeName }}</li>
+                <li class="list-group-item"><strong>Fronteras: </strong> {{ pais.borders }}</li>
+                <li class="list-group-item"><strong>Región: </strong> {{ pais.region}}</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>Traducciones</h3>
+    <div class="row">
+        <div class="col">
+            <span class="bagde bg-primary text-white mr-1">{{pais.translations.br}}</span>
+            <span class="bagde bg-primary text-white mr-1">{{pais.translations.de}}</span>
+            <span class="bagde bg-primary text-white mr-1">{{pais.translations.es}}</span>
+            <span class="bagde bg-primary text-white mr-1">{{pais.translations.fa}}</span>
+            <span class="bagde bg-primary text-white mr-1">{{pais.translations.fr}}</span>
+            <span class="bagde bg-primary text-white mr-1">{{pais.translations.hr}}</span>
+            <span class="bagde bg-primary text-white mr-1">{{pais.translations.it}}</span>
+            <span class="bagde bg-primary text-white mr-1">{{pais.translations.ja}}</span>
+            <span class="bagde bg-primary text-white mr-1">{{pais.translations.nl}}</span>
+            <span class="bagde bg-primary text-white mr-1">{{pais.translations.pt}}</span>
+        </div>
+    </div>
+    
+</ng-template>
+
+
